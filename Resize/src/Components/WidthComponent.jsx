@@ -4,6 +4,9 @@ function WidthComponent(){
 
   useEffect(() => {
    window.addEventListener('resize', () => setWidth(window.innerWidth));
+   return () => {
+      window.removeEventListener('resize', () => setWidth(window.innerWidth));
+    };
   }, []);
 
   return (
